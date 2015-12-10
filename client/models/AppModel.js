@@ -22,12 +22,11 @@ var AppModel = Backbone.Model.extend({
       
     }, this);
 
-    // params.library.on('dequeue', function() {
-    //   this.get('songQueue').shift();
-    //   if(this.get("songQueue").length !== 0){
-    //     this.trigger('play', this.get("songQueue").first());
-    //   }
-    // }, this);
+    params.library.on('dequeue', function(song) {
+      this.get('songQueue').remove(song);
+      
+    }, this);
+
   }
 
 });

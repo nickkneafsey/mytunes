@@ -8,10 +8,7 @@ var SongQueue = Songs.extend({
   },
 
   playFirst: function() {
-    console.log("this", this.length, this)
-    if (this.length){
-      this.at(0).play();
-    }
+    this.at(0).play();
   },
 
   enqueue: function() {
@@ -22,6 +19,7 @@ var SongQueue = Songs.extend({
 
   dequeue: function() {
     this.shift();
+    
   },
 
   playNext: function(){
