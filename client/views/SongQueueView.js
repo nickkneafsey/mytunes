@@ -4,7 +4,7 @@ var SongQueueView = Backbone.View.extend({
 
   initialize: function() {
     this.render();
-    //console.log(this);
+    
     if(this.collection!==undefined){
 
     this.collection.on("add", this.render, this);
