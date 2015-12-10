@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
   <body>
     <!-- Scripts may be placed anywhere on a page. But FYI, they block rendering of elements
      below them until after the scripts load-->
+    
     <script src="bower_components/jquery/jquery.min.js"></script>
     <script src="bower_components/underscore/underscore.js"></script>
     <script src="bower_components/backbone/backbone.js"></script>
@@ -20,8 +25,12 @@
     <script src="views/AppView.js"></script>
     <script src="views/SongQueueView.js"></script>
     <script src="views/SongQueueEntryView.js"></script>
-
+    <script src="visualizer.js"></script>
+    <nav class="navbar navbar-inverse">
+        <a class="navbar-brand" href="#">MyTunes</a>
+    </nav>
     <script>
+
       $(function() {
         // set up model objects
         var library = new Songs(songData);

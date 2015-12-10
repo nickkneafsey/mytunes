@@ -3,7 +3,7 @@ var PlayerView = Backbone.View.extend({
 
   // HTML5 (native) audio tag is being used
   // see: https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_HTML5_audio_and_video
-  el: '<audio controls autoplay />',
+  el: '<audio controls autoplay/>',
 
   initialize: function() {
     // var context = this;
@@ -12,7 +12,7 @@ var PlayerView = Backbone.View.extend({
     //   context.model.dequeue();
     //  });
   },
-  
+
   events: {
     ended: function() {this.model.ended()}
   },
