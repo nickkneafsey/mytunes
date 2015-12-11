@@ -1,9 +1,15 @@
 var PlaylistView = Backbone.View.extend({
   tagName: "table",
   className: "table table-hover",
-
+  events:{
+    'click': function(){
+      this.collection.meth();
+    
+    }
+  },
   initialize: function () {
     this.render();
+
 
     if(this.collection!==undefined){
       this.collection.on("add", this.render, this);

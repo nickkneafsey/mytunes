@@ -5,7 +5,7 @@ var AppModel = Backbone.Model.extend({
     this.set('currentSong', new SongModel());
     this.set('songQueue', new SongQueue());
 
-    this.set('playList', new Songs());
+    this.set('playList', new Playlists());
 
     /* Note that 'this' is passed as the third argument. That third argument is
     the context. The 'play' handler will always be bound to that context we pass in.
@@ -13,6 +13,12 @@ var AppModel = Backbone.Model.extend({
     the 'this' we use that's actually in the function (this.set('currentSong', song)) would
     end up referring to the window. That's just what happens with all JS events. The handlers end up
     getting called from the window (unless we override it, as we do here). */
+
+    this.get('playList').on('meth', function(songs) {
+      //this.set('currentSong', song);
+      this.get('songQueue').reset();
+      this.get('songQueue').add(songs);
+    }, this);
 
     params.library.on('adder', function(song) {
       //this.set('currentSong', song);
@@ -32,6 +38,7 @@ var AppModel = Backbone.Model.extend({
       this.get('songQueue').remove(song);
       
     }, this);
+
 
   }
 
