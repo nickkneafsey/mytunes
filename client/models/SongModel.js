@@ -13,5 +13,8 @@ var SongModel = Backbone.Model.extend({
   },
   ended: function(){
     this.trigger('ended', this);
+  },
+  adder: function(){
+    this.trigger('adder', this);
   }
 });
